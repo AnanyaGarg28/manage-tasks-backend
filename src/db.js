@@ -1,5 +1,5 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
-const uri = "mongodb+srv://admin:ananya123@cluster0.ycawnnl.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.DB_URI;
 let client;
 
 export const initializeDbConnection = async () => {
