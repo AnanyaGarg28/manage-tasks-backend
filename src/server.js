@@ -10,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: "*",
 }));
 
 //Add all the routes to the our Express server
