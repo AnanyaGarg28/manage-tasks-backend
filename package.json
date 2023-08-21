@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node -r dotenv/config ./src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm i && babel src -d dist",
+    "prod": "node dist/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "@babel/core": "^7.18.10",
     "@babel/node": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
+    "@babel/cli": "^7.22.10",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
