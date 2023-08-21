@@ -17,19 +17,19 @@ export const signupRoute = {
 
         const passwordHash = await bcrypt.hash(password, 10);
 
-        const info = {
+        const userInfo = {
             name,
         }
 
         const result = await db.collection('users').insertOne({
-            email, passwordHash, info, isVerified: false
+            email, passwordHash, userInfo, isVerified: false
         })
 
         const { insertedId } = result;
 
         jwt.sign({
             email,
-            info,
+            userInfo,
             id:insertedId,
             isVerified: false
         },
